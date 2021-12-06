@@ -78,4 +78,7 @@
 .primary_button {
   color:#FFFFFF;
 }
+.link_button {
+  color:#1E98D7;
+}
 textarea, select, input, button { outline: none; }
