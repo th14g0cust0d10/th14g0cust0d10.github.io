@@ -3163,7 +3163,7 @@
   left:0px;
   top:0px;
   width:270px;
-  height:198px;
+  height:308px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -3173,6 +3173,7 @@
   box-shadow:none;
   font-family:'Open Sans';
   font-style:normal;
+  font-size:16px;
 }
 #u148 {
   border-width:0px;
@@ -3180,10 +3181,11 @@
   left:15px;
   top:26px;
   width:270px;
-  height:198px;
+  height:308px;
   display:flex;
   font-family:'Open Sans';
   font-style:normal;
+  font-size:16px;
 }
 #u148 .text {
   position:absolute;
@@ -14470,6 +14472,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   box-shadow:none;
   font-family:'Open Sans';
   font-style:normal;
+  font-size:16px;
 }
 #u148.a {
   width:220px;
@@ -22338,6 +22341,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   box-shadow:none;
   font-family:'Open Sans';
   font-style:normal;
+  font-size:16px;
 }
 #u148.b {
   width:220px;
