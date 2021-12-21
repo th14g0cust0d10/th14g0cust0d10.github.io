@@ -408,7 +408,7 @@
   left:0px;
   top:0px;
   width:270px;
-  height:240px;
+  height:220px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -426,7 +426,7 @@
   left:15px;
   top:26px;
   width:270px;
-  height:240px;
+  height:220px;
   display:flex;
   font-family:'Open Sans';
   font-style:normal;
@@ -2642,7 +2642,7 @@
   left:0px;
   top:0px;
   width:220px;
-  height:234px;
+  height:216px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -2659,7 +2659,7 @@
   left:15px;
   top:26px;
   width:220px;
-  height:234px;
+  height:216px;
   display:flex;
   font-family:'Open Sans';
   font-style:normal;
@@ -12181,7 +12181,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u88.a {
   left:10px;
   width:230px;
-  height:216px;
+  height:198px;
 }
 #u88_div.a {
   border-width:0px;
@@ -12189,7 +12189,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   left:0px;
   top:0px;
   width:230px;
-  height:216px;
+  height:198px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -12204,7 +12204,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u88.a {
   left:10px;
   width:230px;
-  height:216px;
+  height:198px;
 }
 #u88_text.a {
 }
@@ -13770,7 +13770,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   left:0px;
   top:0px;
   width:220px;
-  height:234px;
+  height:216px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -19721,7 +19721,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
 #u88.b {
   left:10px;
   width:230px;
-  height:216px;
+  height:198px;
 }
 #u88_div.b {
   border-width:0px;
@@ -19729,7 +19729,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   left:0px;
   top:0px;
   width:230px;
-  height:216px;
+  height:198px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -19744,7 +19744,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
 #u88.b {
   left:10px;
   width:230px;
-  height:216px;
+  height:198px;
 }
 #u88_text.b {
 }
