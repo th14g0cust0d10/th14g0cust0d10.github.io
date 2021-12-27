@@ -810,12 +810,22 @@ $axure.internal(function ($ax) {
                 });
             }
 
+            const clearPlaceholderTextIfNeeded = function(elementId) {
+                if(!dObj.HideHintOnFocused) {
+                    var inputIndex = elementId.indexOf('_input');
+                    if(inputIndex == -1) return;
+                    var inputId = elementId.substring(0, inputIndex);
+                    if(!$ax.placeholderManager.isActive(inputId)) return;
+                    $ax.placeholderManager.updatePlaceholder(inputId, false, true);
+                }
+            }
+
             // Initialize Placeholders. Right now this is text boxes and text areas.
             // Also, the assuption is being made that these widgets with the placeholder, have no other styles (this may change...)
             var hasPlaceholder = dObj.placeholderText == '' ? true : Boolean(dObj.placeholderText);
             if(isInput && hasPlaceholder) {
                 // This is needed to initialize the placeholder state
-                inputJobj.bind('focus', function () {
+                inputJobj.on('focus', function () {
                     if(dObj.HideHintOnFocused) {
                         var id = this.id;
                         var inputIndex = id.indexOf('_input');
@@ -826,73 +836,47 @@ $axure.internal(function ($ax) {
                         $ax.placeholderManager.updatePlaceholder(inputId, false, true);
                     }
                     $ax.placeholderManager.moveCaret(this.id);
-                }).bind('mouseup', function() {
+                }).on('mouseup', function() {
                     $ax.placeholderManager.moveCaret(this.id);
-                }).bind('blur', function() {
+                }).on('blur', function() {
                     var id = this.id;
                     var inputIndex = id.indexOf('_input');
                     if(inputIndex == -1) return;
                     var inputId = id.substring(0, inputIndex);
-
-                    if($jobj(id).val()) return;
+                    var $input = $jobj(id);
+                    var invalidInput = !$input[0].validity.valid;
+                    if($input.val() || invalidInput) return;
                     $ax.placeholderManager.updatePlaceholder(inputId, true);
                 });
 
-                if(ANDROID) {
-                    //input fires before keyup, to avoid flicker, supported in ie9 and above
-                    inputJobj.bind('input', function() {
-                        if(!dObj.HideHintOnFocused) { //hide on type
-                            var id = this.id;
-                            var inputIndex = id.indexOf('_input');
-                            if(inputIndex == -1) return;
-                            var inputId = id.substring(0, inputIndex);
-
-                            if($ax.placeholderManager.isActive(inputId)) {
-                                $ax.placeholderManager.updatePlaceholder(inputId, false, true);
-                            } else if(!$jobj(id).val()) {
-                                $ax.placeholderManager.updatePlaceholder(inputId, true, false);
-                                $ax.placeholderManager.moveCaret(id, 0);
-                            }
-                        }
-                    });
-                } else {
-                    inputJobj.bind('keydown', function() {
-                        if(!dObj.HideHintOnFocused) {
-                            var id = this.id;
-                            var inputIndex = id.indexOf('_input');
-                            if(inputIndex == -1) return;
-                            var inputId = id.substring(0, inputIndex);
-
-                            if(!$ax.placeholderManager.isActive(inputId)) return;
-                            $ax.placeholderManager.updatePlaceholder(inputId, false, true);
-                        }
-                    }).bind('keyup', function() {
+                inputJobj.on('input', function () {
+                    if (!dObj.HideHintOnFocused) { //hide on type
                         var id = this.id;
                         var inputIndex = id.indexOf('_input');
                         if(inputIndex == -1) return;
                         var inputId = id.substring(0, inputIndex);
 
-                        if($ax.placeholderManager.isActive(inputId)) return;
-                        if(!dObj.HideHintOnFocused && !$jobj(id).val()) {
+                        var $input = $jobj(id);
+                        var emptyInputValue = !$input.val();
+                        var validInput = $input[0].validity.valid;
+                        if ($ax.placeholderManager.isActive(inputId)) {
+                            // clear text if emptyInputValue is true and input is valid;
+                            $ax.placeholderManager.updatePlaceholder(inputId, false, emptyInputValue && validInput);
+                        }
+                        else if (emptyInputValue && validInput) {
                             $ax.placeholderManager.updatePlaceholder(inputId, true);
                             $ax.placeholderManager.moveCaret(id, 0);
                         }
-                    });
-                }
+                    };
+                });
 
-                if(!ANDROID) {
-                    inputJobj.bind('keydown', function() {
-                        if(!dObj.HideHintOnFocused) {
-                            var id = this.id;
-                            var inputIndex = id.indexOf('_input');
-                            if(inputIndex == -1) return;
-                            var inputId = id.substring(0, inputIndex);
-
-                            if(!$ax.placeholderManager.isActive(inputId)) return;
-                            $ax.placeholderManager.updatePlaceholder(inputId, false, true);
-                        }
-                    });
-                }
+                inputJobj.on('keydown', function () {
+                    clearPlaceholderTextIfNeeded(this.id);
+                }).on('beforeinput', function () {
+                    clearPlaceholderTextIfNeeded(this.id);
+                }).on('paste', function () {
+                    clearPlaceholderTextIfNeeded(this.id);
+                });
 
                 $ax.placeholderManager.registerPlaceholder(elementId, dObj.placeholderText, inputJobj.attr('type') == 'password');
                 $ax.placeholderManager.updatePlaceholder(elementId, !($jobj($ax.repeater.applySuffixToElementId(elementId, '_input')).val()));
@@ -1164,10 +1148,13 @@ $axure.internal(function ($ax) {
                 $ax.updateElementText(elementId, element.val());
                 //Key down needed because when holding a key down, key up only fires once, but keydown fires repeatedly.
                 //Key up because last mouse down will only show the state before the last character.
-                element.bind('keydown', function(e) {
+                element.on('keydown', function(e) {
                     $ax.setjBrowserEvent(e);
                     $ax.event.TryFireTextChanged(elementId);
-                }).bind('keyup', function(e) {
+                }).on('keyup', function(e) {
+                    $ax.setjBrowserEvent(e);
+                    $ax.event.TryFireTextChanged(elementId);
+                }).on('input', function(e) {
                     $ax.setjBrowserEvent(e);
                     $ax.event.TryFireTextChanged(elementId);
                 });
@@ -1182,6 +1169,7 @@ $axure.internal(function ($ax) {
                         $ax.updateRadioButtonSelected(radioGroupName, elementId);
                     }
                     var onClick = function(e) {
+                        if ($ax.style.IsWidgetDisabled(elementId)) return;
                         if(radioGroupName !== elementId) {
                             var radioGroup = $("input[name='" + radioGroupName + "']").parent();
                             for(var i = 0; i < radioGroup.length; i++) {
@@ -1189,7 +1177,7 @@ $axure.internal(function ($ax) {
                             }
                         }
                         $ax.style.SetWidgetSelected(elementId, true, true);
-                        if(!$ax.style.IsWidgetDisabled(elementId)) e.originalEvent.handled = true;
+                        e.originalEvent.handled = true;
                     };
                 } else {
                     onClick = function(e) {

@@ -222,7 +222,7 @@ $axure.internal(function($ax) {
                         opacity: options.lightbox.a / 255
                     });
 
-                    var parents = $ax('#' + elementId).getParents(true, ['dynamicPanel'])[0];
+                    var parents = $ax('#' + elementId).getParents(true, '*')[0];
                     var fixedParentPanelId = undefined;
                     for(var j = 0; j < parents.length; j++) {
                         var parentId = parents[j];
