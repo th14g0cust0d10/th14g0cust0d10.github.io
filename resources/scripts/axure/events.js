@@ -593,8 +593,13 @@ $axure.internal(function ($ax) {
     };
 
     var _attachDefaultObjectEvent = function(elementIdQuery, elementId, eventName, fn) {
-        var func = function(e) {
-            if($ax.style.IsWidgetDisabled(elementId) || _shouldIgnoreLabelClickFromCheckboxOrRadioButton(e)) return true;
+        var func = function (e) {
+            var inputIndex = elementId.indexOf('_input');
+            if (inputIndex == -1) {
+                if ($ax.style.IsWidgetDisabled(elementId) || _shouldIgnoreLabelClickFromCheckboxOrRadioButton(e)) return true;
+            } else {
+                if ($ax.style.IsWidgetDisabled(elementId.substring(0, inputIndex)) || _shouldIgnoreLabelClickFromCheckboxOrRadioButton(e)) return false;
+            }
             return fn.apply(this, arguments);
         };
         var bind = !elementIdQuery[eventName];
