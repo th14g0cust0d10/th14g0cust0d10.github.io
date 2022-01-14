@@ -3061,7 +3061,7 @@
   border-width:0px;
   position:absolute;
   left:756px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
   visibility:hidden;
@@ -3354,7 +3354,7 @@
   border-width:0px;
   position:absolute;
   left:756px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
 }
@@ -3495,7 +3495,7 @@
   border-width:0px;
   position:absolute;
   left:1078px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
 }
@@ -3636,7 +3636,7 @@
   border-width:0px;
   position:absolute;
   left:1078px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
   visibility:hidden;
@@ -4942,7 +4942,7 @@
   border-width:0px;
   position:absolute;
   left:434px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
   visibility:hidden;
@@ -5235,7 +5235,7 @@
   border-width:0px;
   position:absolute;
   left:434px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
 }
@@ -5797,7 +5797,7 @@
   border-width:0px;
   position:absolute;
   left:112px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
   visibility:hidden;
@@ -6090,7 +6090,7 @@
   border-width:0px;
   position:absolute;
   left:112px;
-  top:250px;
+  top:212px;
   width:300px;
   height:400px;
 }
@@ -11981,12 +11981,13 @@
   overflow-x:hidden;
   -ms-overflow-y:hidden;
   overflow-y:hidden;
+  background-color:rgba(255, 255, 255, 1);
   background-image:none;
   border:none;
   border-radius:0px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
+  -moz-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.34901960784313724);
+  -webkit-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.34901960784313724);
+  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.34901960784313724);
   visibility:hidden;
 }
 #u78_state7_content {
@@ -18380,7 +18381,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:1078px;
-  top:250px;
+  top:212px;
   width:250px;
   height:350px;
 }
@@ -18481,7 +18482,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:1078px;
-  top:250px;
+  top:212px;
   width:250px;
   height:350px;
 }
@@ -18727,7 +18728,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:436px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -18952,7 +18953,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:436px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -19050,7 +19051,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:708px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -19275,7 +19276,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:708px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -20009,7 +20010,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:112px;
-  top:250px;
+  top:212px;
   width:250px;
   height:350px;
 }
@@ -20233,7 +20234,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:112px;
-  top:250px;
+  top:212px;
   width:250px;
   height:350px;
 }
@@ -20327,7 +20328,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:164px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -20547,7 +20548,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:164px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -20749,7 +20750,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:708px;
-  top:85px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -20974,7 +20975,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:708px;
-  top:85px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -21123,7 +21124,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:436px;
-  top:85px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -21221,7 +21222,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:436px;
-  top:85px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -21441,7 +21442,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:164px;
-  top:85px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -21661,7 +21662,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:164px;
-  top:85px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -24525,13 +24526,13 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u78_state7.a {
   width:1160px;
   height:564px;
-  background-color:rgba(255, 255, 255, 0);
+  background-color:rgba(255, 255, 255, 1);
   background-image:none;
   border:none;
   border-radius:0px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
+  -moz-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.34901960784313724);
+  -webkit-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.34901960784313724);
+  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.34901960784313724);
 }
 #u78_state8.a {
   width:1160px;
@@ -28565,7 +28566,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:1078px;
-  top:250px;
+  top:212px;
   width:250px;
   height:350px;
 }
@@ -28666,7 +28667,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:1078px;
-  top:250px;
+  top:212px;
   width:250px;
   height:350px;
 }
@@ -28924,7 +28925,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:436px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -29149,7 +29150,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:436px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -29247,7 +29248,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:708px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
@@ -29472,7 +29473,7 @@ body.b {  background-color:rgba(255, 255, 255, 1);
   border-width:0px;
   position:absolute;
   left:708px;
-  top:81px;
+  top:80px;
   width:250px;
   height:350px;
 }
