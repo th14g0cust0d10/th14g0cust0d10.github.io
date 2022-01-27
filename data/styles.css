@@ -10,14 +10,6 @@
   line-height:normal;
   text-transform:none;
 }
-.box_1 {
-}
-.box_2 {
-}
-.box_3 {
-}
-.shape {
-}
 .heading_1 {
   font-family:"Arial Normal", "Arial", sans-serif;
   font-weight:bold;
@@ -62,23 +54,25 @@
 .paragraph {
   text-align:left;
 }
-.line {
-}
 .form_hint {
   color:#999999;
 }
 .form_disabled {
 }
+.box_1 {
+}
 .icon {
+}
+.line {
 }
 .ellipse {
 }
 .image {
 }
-.primary_button {
-  color:#FFFFFF;
-}
 .link_button {
   color:#1E98D7;
+}
+.primary_button {
+  color:#FFFFFF;
 }
 textarea, select, input, button { outline: none; }
